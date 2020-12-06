@@ -1,16 +1,16 @@
 const Axios = require("axios");
 const qs = require("qs");
-require("dotenv").config();
 
 module.exports = {
 	getToken: function () {
+
 		Axios({
 			method: "post",
 			url: "https://us.battle.net/oauth/token",
 			data: qs.stringify({
 				grant_type: "client_credentials",
-				client_id: process.env.CLIENT_ID,
-				client_secret: process.env.CLIENT_SECRET,
+				client_id: process.env.REACT_APP_CLIENT_ID,
+				client_secret: process.env.REACT_APP_CLIENT_SECRET,
 			}),
 		})
 			.then(function (response) {
@@ -29,4 +29,3 @@ module.exports = {
 		return "Error";
 	},
 };
-//getToken;

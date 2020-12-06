@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { getToken } from "../services/getToken";
+require("dotenv").config();
+
 
 class Roster extends Component {
 	render() {
